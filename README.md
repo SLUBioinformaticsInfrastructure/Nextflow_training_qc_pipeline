@@ -10,7 +10,7 @@ Tools used in the pipeline:
 - Multiqc to assemble the reports
 
 Goals for training: 
-- Show a simple pipeline that reproduces a workflow the students have already worked on, just with individual files.
+- Show a simple pipeline that reproduces a workflow the students have already worked on.
 - Talk about reproducibility and automation.
 - Deepen their understanding of nextflow by letting them add their own process. 
 - Talk about quality control and how to read the outputs of the used tools.
