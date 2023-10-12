@@ -1,0 +1,4 @@
+project: 2314_medbioinfo
+outdir: "/shared/projects/2314_medbioinfo/amrei/nf_output"
+input_read_pairs: "/shared/projects/2314_medbioinfo/amrei/data/sra_fastq/*{1,2}.fastq.gz"
+bowtie2_db: "/shared/projects/2314_medbioinfo/amrei/data/bowtie2_DBs/SC2_bowtie2_DB*"
