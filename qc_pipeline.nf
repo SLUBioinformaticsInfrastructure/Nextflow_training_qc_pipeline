@@ -36,8 +36,8 @@ process FASTQC {
 	"""
 
 	fastqc \\
-		--noextract \\
-		$reads
+	    --noextract \\
+	    $reads
 
 	"""
 
@@ -61,10 +61,10 @@ process FLASH2 {
 	"""
 	
 	flash2 \\
-		$reads \\
-		--output-prefix="${id}.flash2" \\
-		--max-overlap=150 \\
-		| tee -a ${id}_flash2.log
+	    $reads \\
+	    --output-prefix="${id}.flash2" \\
+	    --max-overlap=150 \\
+	    | tee -a ${id}_flash2.log
 
 
 	"""
@@ -94,11 +94,11 @@ process BOWTIE2 {
 	"""
 
 	bowtie2 \\
-		-x $db_name \\
-		-U $merged_reads \\
-		-S ${id}_bowtie2_merged_${db_name}.sam \\
-		--no-unal \\
-		|& tee -a ${id}_bowtie2_merged_${db_name}.log
+	    -x $db_name \\
+	    -U $merged_reads \\
+	    -S ${id}_bowtie2_merged_${db_name}.sam \\
+	    --no-unal \\
+	    |& tee -a ${id}_bowtie2_merged_${db_name}.log
 
 	"""
 
@@ -106,7 +106,6 @@ process BOWTIE2 {
 	path "${id}_bowtie2_merged_${db_name}.log", emit: logs
 	path "${id}_bowtie2_merged_${db_name}.sam", emit: aligned_reads 
 	
-
 }
 
 process MULTIQC {
@@ -124,8 +123,8 @@ process MULTIQC {
 	script: 
 	"""
 	multiqc \\
-    		--force \\
-    		--title "amrei test sub-set" \\
+    	    --force \\
+    	    --title "amrei test sub-set" \\
 		.
 	"""
 
