@@ -5,7 +5,7 @@ This is a short pipeline for students to improve their understanding of using Ne
 
 Tools used in the pipeline: 
 - Fastqc for quality control
-- Flas2 for merging paired end reads
+- Flash2 for merging paired end reads
 - Bowtie2 for mapping the reads to a data base
 - Multiqc to assemble the reports
 
