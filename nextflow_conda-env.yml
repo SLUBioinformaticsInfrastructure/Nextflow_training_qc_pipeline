@@ -7,3 +7,4 @@ channels:
 dependencies:
     - nextflow
     - nf-core
+    - mamba
