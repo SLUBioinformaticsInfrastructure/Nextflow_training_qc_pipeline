@@ -1,3 +1,4 @@
+# usage: conda env create --prefix path/tp/shared/folder -f path/to/file/nextflow_conda-env.yml 
 name: nextflow-env
 channels:
     - conda-forge
