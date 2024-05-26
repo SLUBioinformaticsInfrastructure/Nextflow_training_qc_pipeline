@@ -78,7 +78,6 @@ process FLASH2 {
 	
 }
 
-
 process BOWTIE2 {
 
 	input: 
@@ -86,11 +85,11 @@ process BOWTIE2 {
 	tuple val(id), path(merged_reads)
 
 	// directives:
-	container 'https://depot.galaxyproject.org/singularity/bowtie2:2.5.1--py39h6fed5c7_2'
+	container 'https://depot.galaxyproject.org/singularity/mulled-v2-ac74a7f02cebcfcc07d8e8d1d750af9c83b4d45a:f70b31a2db15c023d641c32f433fb02cd04df5a6-0'
 	publishDir "$params.outdir/03_bowtie2"
 
 	script:
-	db_name = bowtie2_db.find{it.name.endsWith(".1.bt2")}.name.minus(".1.bt2")
+	db_name = bowtie2_db.find{it.name.endsWith(".rev.1.bt2")}.name.minus(".rev.1.bt2")
 	"""
 
 	bowtie2 \\
@@ -107,6 +106,7 @@ process BOWTIE2 {
 	path "${id}_bowtie2_merged_${db_name}.sam", emit: aligned_reads 
 	
 }
+
 
 process MULTIQC {
 
