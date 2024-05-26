@@ -2,3 +2,9 @@
 .pixi
 *.egg-info
 
+# nextflow files
+.nextflow
+work/
+results/
+
+
