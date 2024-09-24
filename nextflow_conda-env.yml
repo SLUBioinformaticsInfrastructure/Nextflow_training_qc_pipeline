@@ -3,7 +3,6 @@ name: nextflow-env
 channels:
     - conda-forge
     - bioconda
-    - defaults
 dependencies:
     - nextflow
     - nf-core
